@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home</title>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+    <meta name="description" content="Описание">
+    <!--Favicons BEGIN-->
+    <meta name="theme-color" content="#fff">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#17a5f4">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico">
+    <!--Favicons END-->
+    <meta property="og:title" content="Заголовок">
+    <meta property="og:site_name" content="Название сайта">
+    <meta property="og:url" content="https://site-url.com">
+    <meta property="og:description" content="Описание сайта">
+    <meta property="og:image" content="img/preview-social-link/preview-social-link.png">
+    <meta property="vk:image" content="img/preview-social-link/preview-vk-link.png">
+    <!--Styles BEGIN-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    <link href="https://vjs.zencdn.net/7.8.4/video-js.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.min.css">
+    <!--Styles END-->
+  </head>
+  <body class="home page">
+    <div class="screen-ie"><img class="screen-ie__logo" src="img/logo.png" alt=""></div>
+    <ul class="index-list">
+      <li><a href="home.html">home</a></li>
+      <li><a href="news.html">news</a></li>
+      <li><a href="news-single.html">news-single</a></li>
+      <li><a href="programs.html">programs</a></li>
+      <li><a href="program.html">program</a></li>
+      <li><a href="films.html">films</a></li>
+      <li><a href="film.html">film</a></li>
+      <li><a href="about-us.html">about-us</a></li>
+      <li><a href="tv-programmes.html">tv-programmes</a></li>
+      <li><a href="on-air.html">on-air</a></li>
+      <li><a href="test.html">test</a></li>
+      <li><a href="test-answer.html">test-answer</a></li>
+      <li><a href="search.html">search</a></li>
+    </ul>
+    <script src="js/scripts.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://rawgit.com/Artemeey/5ebc39370e568c34f03dce1639cabee8/raw/8de40b26479c406ee9cd6f9b4b3f4ad05370a024/jquery.datepicker.extension.range.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>
+    <script>
+      $(function () {
+      	$("#date_range").datepicker(
+      		{
+      			language: 'ru',
+      			dateFormat: 'dd-mm-yy',
+      			range: 'period',
+      			range_multiple_max: 2,
+      			monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+      			dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+      			onSelect: function (dateText, inst, extensionRange) {
+      				$('[name=startDate]').val(extensionRange.startDateText);
+      				$('[name=endDate]').val(extensionRange.endDateText);
+      			}
+      		}
+      	);
+      	$.datepicker.regional['ru']
+      	$('#date_range').datepicker('setDate', ['', '']);
+      	var extensionRange = $('#date_range').datepicker('widget').data('datepickerExtensionRange');
+      	if (extensionRange.startDateText) $('[name=startDate]').val(extensionRange.startDateText);
+      	if (extensionRange.endDateText) $('[name=endDate]').val(extensionRange.endDateText);
+      
+      });
+    </script>
+  </body>
+</html>
