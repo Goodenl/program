@@ -7553,10 +7553,6 @@ input[type=range]:focus::-ms-fill-upper {
     display: none;
   }
 
-  .news-single-content .opinion.opinion_second {
-    display: none;
-  }
-
   .news-single-content .image-slider {
     display: none;
   }
@@ -10521,6 +10517,10 @@ input[type=range]:focus::-ms-fill-upper {
     margin-left: 0;
   }
 
+  .news-single-content .inst-widget {
+    left: 0;
+  }
+
   .news-single-content__social-item {
     width: 26px;
     height: 26px;
@@ -10997,7 +10997,17 @@ input[type=range]:focus::-ms-fill-upper {
   }
 
   .main--films .filter-panel__sort {
-    display: flex;
+    display: flex !important;
+    justify-content: space-between;
+  }
+
+  .main--films .filter-panel__sort-text {
+    margin-bottom: 0;
+    line-height: normal;
+  }
+
+  .main--films .filter-panel__sort-select {
+    right: 10px;
   }
 
   .main--films .tall.program-default-card {
